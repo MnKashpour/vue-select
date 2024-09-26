@@ -1,17 +1,17 @@
 var E = Object.defineProperty, M = Object.defineProperties;
 var x = Object.getOwnPropertyDescriptors;
-var C = Object.getOwnPropertySymbols;
+var L = Object.getOwnPropertySymbols;
 var I = Object.prototype.hasOwnProperty, N = Object.prototype.propertyIsEnumerable;
-var A = (e, t, s) => t in e ? E(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, f = (e, t) => {
+var B = (e, t, s) => t in e ? E(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, f = (e, t) => {
   for (var s in t || (t = {}))
-    I.call(t, s) && A(e, s, t[s]);
-  if (C)
-    for (var s of C(t))
-      N.call(t, s) && A(e, s, t[s]);
+    I.call(t, s) && B(e, s, t[s]);
+  if (L)
+    for (var s of L(t))
+      N.call(t, s) && B(e, s, t[s]);
   return e;
-}, b = (e, t) => M(e, x(t));
-import { openBlock as a, createElementBlock as r, createElementVNode as u, resolveDirective as K, normalizeClass as L, renderSlot as d, normalizeProps as h, guardReactiveProps as c, Fragment as B, renderList as D, createTextVNode as _, toDisplayString as O, createBlock as w, resolveDynamicComponent as v, createCommentVNode as y, mergeProps as k, toHandlers as j, withDirectives as S, vShow as P, createVNode as R, Transition as z, withCtx as $, withModifiers as F } from "vue";
-const U = {
+}, O = (e, t) => M(e, x(t));
+import { openBlock as a, createElementBlock as r, createElementVNode as u, resolveDirective as K, normalizeClass as A, renderSlot as d, normalizeProps as h, guardReactiveProps as c, Fragment as b, renderList as k, createTextVNode as w, toDisplayString as m, createBlock as v, resolveDynamicComponent as S, createCommentVNode as g, mergeProps as D, toHandlers as j, withDirectives as V, vShow as P, createVNode as R, Transition as z, withCtx as U, withModifiers as F } from "vue";
+const q = {
   props: {
     autoscroll: {
       type: Boolean,
@@ -31,10 +31,10 @@ const U = {
       var t;
       const e = ((t = this.$refs.dropdownMenu) == null ? void 0 : t.children[this.typeAheadPointer]) || !1;
       if (e) {
-        const s = this.getDropdownViewport(), { top: l, bottom: n, height: i } = e.getBoundingClientRect();
-        if (l < s.top)
+        const s = this.getDropdownViewport(), { top: n, bottom: l, height: i } = e.getBoundingClientRect();
+        if (n < s.top)
           return this.$refs.dropdownMenu.scrollTop = e.offsetTop;
-        if (n > s.bottom)
+        if (l > s.bottom)
           return this.$refs.dropdownMenu.scrollTop = e.offsetTop - (s.height - i);
       }
     },
@@ -46,7 +46,7 @@ const U = {
       };
     }
   }
-}, q = {
+}, J = {
   data() {
     return {
       typeAheadPointer: -1
@@ -92,7 +92,7 @@ const U = {
       ) : -1;
     }
   }
-}, J = {
+}, H = {
   props: {
     loading: {
       type: Boolean,
@@ -117,22 +117,22 @@ const U = {
       return e == null ? this.mutableLoading = !this.mutableLoading : this.mutableLoading = e;
     }
   }
-}, V = (e, t) => {
+}, C = (e, t) => {
   const s = e.__vccOpts || e;
-  for (const [l, n] of t)
-    s[l] = n;
+  for (const [n, l] of t)
+    s[n] = l;
   return s;
-}, H = {}, X = {
+}, X = {}, Y = {
   xmlns: "http://www.w3.org/2000/svg",
   width: "10",
   height: "10"
-}, Y = /* @__PURE__ */ u("path", { d: "M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z" }, null, -1), Q = [
-  Y
+}, Q = /* @__PURE__ */ u("path", { d: "M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z" }, null, -1), $ = [
+  Q
 ];
 function G(e, t) {
-  return a(), r("svg", X, Q);
+  return a(), r("svg", Y, $);
 }
-const W = /* @__PURE__ */ V(H, [["render", G]]), Z = {}, ee = {
+const W = /* @__PURE__ */ C(X, [["render", G]]), Z = {}, ee = {
   xmlns: "http://www.w3.org/2000/svg",
   width: "14",
   height: "10"
@@ -142,23 +142,23 @@ const W = /* @__PURE__ */ V(H, [["render", G]]), Z = {}, ee = {
 function ie(e, t) {
   return a(), r("svg", ee, se);
 }
-const oe = /* @__PURE__ */ V(Z, [["render", ie]]), T = {
+const oe = /* @__PURE__ */ C(Z, [["render", ie]]), T = {
   Deselect: W,
   OpenIndicator: oe
-}, le = {
+}, ne = {
   mounted(e, { instance: t }) {
     if (t.appendToBody) {
       const {
         height: s,
-        top: l,
-        left: n,
+        top: n,
+        left: l,
         width: i
       } = t.$refs.toggle.getBoundingClientRect();
-      let m = window.scrollX || window.pageXOffset, o = window.scrollY || window.pageYOffset;
+      let _ = window.scrollX || window.pageXOffset, o = window.scrollY || window.pageYOffset;
       e.unbindPosition = t.calculatePosition(e, t, {
         width: i + "px",
-        left: m + n + "px",
-        top: o + l + s + "px"
+        left: _ + l + "px",
+        top: o + n + s + "px"
       }), document.body.appendChild(e);
     }
   },
@@ -166,7 +166,7 @@ const oe = /* @__PURE__ */ V(Z, [["render", ie]]), T = {
     t.appendToBody && (e.unbindPosition && typeof e.unbindPosition == "function" && e.unbindPosition(), e.parentNode && e.parentNode.removeChild(e));
   }
 };
-function ne(e) {
+function le(e) {
   const t = {};
   return Object.keys(e).sort().forEach((s) => {
     t[s] = e[s];
@@ -178,8 +178,8 @@ function re() {
 }
 const de = {
   components: f({}, T),
-  directives: { appendToBody: le },
-  mixins: [U, q, J],
+  directives: { appendToBody: ne },
+  mixins: [q, J, H],
   compatConfig: {
     MODE: 3
   },
@@ -279,7 +279,7 @@ https://vue-select.org/api/props.html#getoptionlabel`
         if (typeof e != "object")
           return e;
         try {
-          return e.hasOwnProperty("id") ? e.id : ne(e);
+          return e.hasOwnProperty("id") ? e.id : le(e);
         } catch (t) {
           return console.warn(`[vue-select warn]: Could not stringify this option to generate unique key. Please provide'getOptionKey' prop to return a unique key for each option.
 https://vue-select.org/api/props.html#getoptionkey`, e, t);
@@ -318,8 +318,8 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
       type: Function,
       default(e, t) {
         return e.filter((s) => {
-          let l = this.getOptionLabel(s);
-          return typeof l == "number" && (l = l.toString()), this.filterBy(s, l, t);
+          let n = this.getOptionLabel(s);
+          return typeof n == "number" && (n = n.toString()), this.filterBy(s, n, t);
         });
       }
     },
@@ -372,8 +372,8 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
     },
     calculatePosition: {
       type: Function,
-      default(e, t, { width: s, top: l, left: n }) {
-        e.style.top = l, e.style.left = n, e.style.width = s;
+      default(e, t, { width: s, top: n, left: l }) {
+        e.style.top = n, e.style.left = l, e.style.width = s;
       }
     },
     dropdownShouldOpen: {
@@ -389,6 +389,10 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
     newOptionLabel: {
       type: String,
       default: "New"
+    },
+    newOptionLabelBefore: {
+      type: Boolean,
+      default: !0
     }
   },
   data() {
@@ -471,8 +475,8 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
         },
         listHeader: e,
         listFooter: e,
-        header: b(f({}, e), { deselect: this.deselect }),
-        footer: b(f({}, e), { deselect: this.deselect })
+        header: O(f({}, e), { deselect: this.deselect }),
+        footer: O(f({}, e), { deselect: this.deselect })
       };
     },
     childComponents() {
@@ -572,7 +576,7 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
         ...this.deselectButtons || [],
         this.$refs.clearButton
       ];
-      if (this.searchEl === void 0 || s.filter(Boolean).some((l) => l.contains(e.target) || l === e.target)) {
+      if (this.searchEl === void 0 || s.filter(Boolean).some((n) => n.contains(e.target) || n === e.target)) {
         e.preventDefault();
         return;
       }
@@ -590,9 +594,9 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
       return this.getOptionKey(e) === this.getOptionKey(t);
     },
     findOptionFromReducedValue(e) {
-      const t = (l) => JSON.stringify(this.reduce(l)) === JSON.stringify(e), s = [...this.options, ...this.pushedTags].filter(t);
+      const t = (n) => JSON.stringify(this.reduce(n)) === JSON.stringify(e), s = [...this.options, ...this.pushedTags].filter(t);
       return s.length === 1 ? s[0] : s.find(
-        (l) => this.optionComparator(l, this.$data._value)
+        (n) => this.optionComparator(n, this.$data._value)
       ) || e;
     },
     closeSearchOptions() {
@@ -643,19 +647,19 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
       this.mousedown = !1;
     },
     onSearchKeyDown(e) {
-      const t = (n) => (n.preventDefault(), !this.isComposing && this.typeAheadSelect()), s = {
-        8: (n) => this.maybeDeleteValue(),
-        9: (n) => this.onTab(),
-        27: (n) => this.onEscape(),
-        38: (n) => (n.preventDefault(), this.typeAheadUp()),
-        40: (n) => (n.preventDefault(), this.typeAheadDown())
+      const t = (l) => (l.preventDefault(), !this.isComposing && this.typeAheadSelect()), s = {
+        8: (l) => this.maybeDeleteValue(),
+        9: (l) => this.onTab(),
+        27: (l) => this.onEscape(),
+        38: (l) => (l.preventDefault(), this.typeAheadUp()),
+        40: (l) => (l.preventDefault(), this.typeAheadDown())
       };
       this.selectOnKeyCodes.forEach(
-        (n) => s[n] = t
+        (l) => s[l] = t
       );
-      const l = this.mapKeydown(s, this);
-      if (typeof l[e.keyCode] == "function")
-        return l[e.keyCode](e);
+      const n = this.mapKeydown(s, this);
+      if (typeof n[e.keyCode] == "function")
+        return n[e.keyCode](e);
     }
   }
 }, he = ["dir"], ce = ["id", "aria-expanded", "aria-owns"], ue = {
@@ -664,18 +668,21 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
 }, pe = ["disabled", "title", "aria-label", "onClick"], fe = {
   ref: "actions",
   class: "vs__actions"
-}, ge = ["disabled"], ye = { class: "vs__spinner" }, me = ["id"], be = ["id", "aria-selected", "onMouseover", "onClick"], _e = {
+}, ge = ["disabled"], ye = { class: "vs__spinner" }, be = ["id"], me = ["id", "aria-selected", "onMouseover", "onClick"], _e = {
   key: 0,
   class: "vs__new-option-label"
 }, Oe = {
   key: 0,
+  class: "vs__new-option-label"
+}, we = {
+  key: 0,
   class: "vs__no-options"
-}, we = ["id"];
-function ve(e, t, s, l, n, i) {
-  const m = K("append-to-body");
+}, ve = ["id"];
+function Se(e, t, s, n, l, i) {
+  const _ = K("append-to-body");
   return a(), r("div", {
     dir: s.dir,
-    class: L(["v-select", i.stateClasses])
+    class: A(["v-select", i.stateClasses])
   }, [
     d(e.$slots, "header", h(c(i.scope.header))),
     u("div", {
@@ -689,7 +696,7 @@ function ve(e, t, s, l, n, i) {
       onMousedown: t[1] || (t[1] = (o) => i.toggleDropdown(o))
     }, [
       u("div", ue, [
-        (a(!0), r(B, null, D(i.selectedValue, (o, p) => d(e.$slots, "selected-option-container", {
+        (a(!0), r(b, null, k(i.selectedValue, (o, p) => d(e.$slots, "selected-option-container", {
           option: i.normalizeOptionForSlot(o),
           deselect: i.deselect,
           multiple: s.multiple,
@@ -700,29 +707,29 @@ function ve(e, t, s, l, n, i) {
             class: "vs__selected"
           }, [
             d(e.$slots, "selected-option", h(c(i.normalizeOptionForSlot(o))), () => [
-              _(O(s.getOptionLabel(o)), 1)
+              w(m(s.getOptionLabel(o)), 1)
             ]),
             s.multiple ? (a(), r("button", {
               key: 0,
               ref_for: !0,
-              ref: (g) => n.deselectButtons[p] = g,
+              ref: (y) => l.deselectButtons[p] = y,
               disabled: s.disabled,
               type: "button",
               class: "vs__deselect",
               title: `Deselect ${s.getOptionLabel(o)}`,
               "aria-label": `Deselect ${s.getOptionLabel(o)}`,
-              onClick: (g) => i.deselect(o)
+              onClick: (y) => i.deselect(o)
             }, [
-              (a(), w(v(i.childComponents.Deselect)))
-            ], 8, pe)) : y("", !0)
+              (a(), v(S(i.childComponents.Deselect)))
+            ], 8, pe)) : g("", !0)
           ]))
         ])), 256)),
         d(e.$slots, "search", h(c(i.scope.search)), () => [
-          u("input", k({ class: "vs__search" }, i.scope.search.attributes, j(i.scope.search.events, !0)), null, 16)
+          u("input", D({ class: "vs__search" }, i.scope.search.attributes, j(i.scope.search.events, !0)), null, 16)
         ])
       ], 512),
       u("div", fe, [
-        S(u("button", {
+        V(u("button", {
           ref: "clearButton",
           disabled: s.disabled,
           type: "button",
@@ -731,23 +738,23 @@ function ve(e, t, s, l, n, i) {
           "aria-label": "Clear Selected",
           onClick: t[0] || (t[0] = (...o) => i.clearSelection && i.clearSelection(...o))
         }, [
-          (a(), w(v(i.childComponents.Deselect)))
+          (a(), v(S(i.childComponents.Deselect)))
         ], 8, ge), [
           [P, i.showClearButton]
         ]),
         d(e.$slots, "open-indicator", h(c(i.scope.openIndicator)), () => [
-          s.noDrop ? y("", !0) : (a(), w(v(i.childComponents.OpenIndicator), h(k({ key: 0 }, i.scope.openIndicator.attributes)), null, 16))
+          s.noDrop ? g("", !0) : (a(), v(S(i.childComponents.OpenIndicator), h(D({ key: 0 }, i.scope.openIndicator.attributes)), null, 16))
         ]),
         d(e.$slots, "spinner", h(c(i.scope.spinner)), () => [
-          S(u("div", ye, "Loading...", 512), [
+          V(u("div", ye, "Loading...", 512), [
             [P, e.mutableLoading]
           ])
         ])
       ], 512)
     ], 40, ce),
     R(z, { name: s.transition }, {
-      default: $(() => [
-        i.dropdownOpen ? S((a(), r("ul", {
+      default: U(() => [
+        i.dropdownOpen ? V((a(), r("ul", {
           id: `vs${s.uid}__listbox`,
           ref: "dropdownMenu",
           key: `vs${s.uid}__listbox`,
@@ -758,46 +765,51 @@ function ve(e, t, s, l, n, i) {
           onMouseup: t[3] || (t[3] = (...o) => i.onMouseUp && i.onMouseUp(...o))
         }, [
           d(e.$slots, "list-header", h(c(i.scope.listHeader))),
-          (a(!0), r(B, null, D(i.filteredOptions, (o, p) => (a(), r("li", {
+          (a(!0), r(b, null, k(i.filteredOptions, (o, p) => (a(), r("li", {
             id: `vs${s.uid}__option-${p}`,
             key: s.getOptionKey(o),
             role: "option",
-            class: L(["vs__dropdown-option", {
+            class: A(["vs__dropdown-option", {
               "vs__dropdown-option--deselect": i.isOptionDeselectable(o) && p === e.typeAheadPointer,
               "vs__dropdown-option--selected": i.isOptionSelected(o),
               "vs__dropdown-option--highlight": p === e.typeAheadPointer,
               "vs__dropdown-option--disabled": !s.selectable(o)
             }]),
             "aria-selected": p === e.typeAheadPointer ? !0 : null,
-            onMouseover: (g) => s.selectable(o) ? e.typeAheadPointer = p : null,
-            onClick: F((g) => s.selectable(o) ? i.select(o) : null, ["prevent", "stop"])
+            onMouseover: (y) => s.selectable(o) ? e.typeAheadPointer = p : null,
+            onClick: F((y) => s.selectable(o) ? i.select(o) : null, ["prevent", "stop"])
           }, [
+            s.newOptionLabelBefore ? (a(), r(b, { key: 0 }, [
+              s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", _e, m(s.newOptionLabel), 1)) : g("", !0)
+            ], 64)) : g("", !0),
             d(e.$slots, "option", h(c(i.normalizeOptionForSlot(o))), () => [
-              _(O(s.getOptionLabel(o)), 1)
+              w(m(s.getOptionLabel(o)), 1)
             ]),
-            s.taggable && !i.optionExists(o) ? (a(), r("span", _e, O(s.newOptionLabel), 1)) : y("", !0)
-          ], 42, be))), 128)),
-          i.filteredOptions.length === 0 ? (a(), r("li", Oe, [
+            s.newOptionLabelBefore ? g("", !0) : (a(), r(b, { key: 1 }, [
+              s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", Oe, m(s.newOptionLabel), 1)) : g("", !0)
+            ], 64))
+          ], 42, me))), 128)),
+          i.filteredOptions.length === 0 ? (a(), r("li", we, [
             d(e.$slots, "no-options", h(c(i.scope.noOptions)), () => [
-              _(" Sorry, no matching options. ")
+              w(" Sorry, no matching options. ")
             ])
-          ])) : y("", !0),
+          ])) : g("", !0),
           d(e.$slots, "list-footer", h(c(i.scope.listFooter)))
-        ], 40, me)), [
-          [m]
+        ], 40, be)), [
+          [_]
         ]) : (a(), r("ul", {
           key: 1,
           id: `vs${s.uid}__listbox`,
           role: "listbox",
           style: { display: "none", visibility: "hidden" }
-        }, null, 8, we))
+        }, null, 8, ve))
       ]),
       _: 3
     }, 8, ["name"]),
     d(e.$slots, "footer", h(c(i.scope.footer)))
   ], 10, he);
 }
-const Ce = /* @__PURE__ */ V(de, [["render", ve]]);
+const Le = /* @__PURE__ */ C(de, [["render", Se]]);
 export {
-  Ce as default
+  Le as default
 };
