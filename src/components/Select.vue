@@ -58,17 +58,16 @@
           @mouseover="selectable(option) ? (typeAheadPointer = index) : null"
           @click.prevent.stop="selectable(option) ? select(option) : null">
 
-          <template v-if="newOptionLabelBefore">
-            <span v-if="taggable && !optionExists(option) && newOptionLabel" class="vs__new-option-label">{{
-              newOptionLabel }}</span>
-          </template>
           <slot name="option" v-bind="normalizeOptionForSlot(option)">
+            <span v-if="newOptionLabelBefore && taggable && !optionExists(option) && newOptionLabel"
+              class="vs__new-option-label">{{
+                newOptionLabel }}</span>
             {{ getOptionLabel(option) }}
+            <span v-if="!newOptionLabelBefore && taggable && !optionExists(option) && newOptionLabel"
+              class="vs__new-option-label">{{
+                newOptionLabel }}</span>
           </slot>
-          <template v-if="!newOptionLabelBefore">
-            <span v-if="taggable && !optionExists(option) && newOptionLabel" class="vs__new-option-label">{{
-              newOptionLabel }}</span>
-          </template>
+
         </li>
         <li v-if="filteredOptions.length === 0" class="vs__no-options">
           <slot name="no-options" v-bind="scope.noOptions">

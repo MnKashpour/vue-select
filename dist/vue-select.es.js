@@ -1,16 +1,16 @@
 var E = Object.defineProperty, M = Object.defineProperties;
 var x = Object.getOwnPropertyDescriptors;
-var L = Object.getOwnPropertySymbols;
+var C = Object.getOwnPropertySymbols;
 var I = Object.prototype.hasOwnProperty, N = Object.prototype.propertyIsEnumerable;
-var B = (e, t, s) => t in e ? E(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, f = (e, t) => {
+var L = (e, t, s) => t in e ? E(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s, f = (e, t) => {
   for (var s in t || (t = {}))
-    I.call(t, s) && B(e, s, t[s]);
-  if (L)
-    for (var s of L(t))
-      N.call(t, s) && B(e, s, t[s]);
+    I.call(t, s) && L(e, s, t[s]);
+  if (C)
+    for (var s of C(t))
+      N.call(t, s) && L(e, s, t[s]);
   return e;
-}, O = (e, t) => M(e, x(t));
-import { openBlock as a, createElementBlock as r, createElementVNode as u, resolveDirective as K, normalizeClass as A, renderSlot as d, normalizeProps as h, guardReactiveProps as c, Fragment as b, renderList as k, createTextVNode as w, toDisplayString as m, createBlock as v, resolveDynamicComponent as S, createCommentVNode as g, mergeProps as D, toHandlers as j, withDirectives as V, vShow as P, createVNode as R, Transition as z, withCtx as U, withModifiers as F } from "vue";
+}, _ = (e, t) => M(e, x(t));
+import { openBlock as a, createElementBlock as r, createElementVNode as u, resolveDirective as K, normalizeClass as B, renderSlot as d, normalizeProps as h, guardReactiveProps as c, Fragment as A, renderList as k, createTextVNode as O, toDisplayString as b, createBlock as w, resolveDynamicComponent as v, createCommentVNode as g, mergeProps as D, toHandlers as j, withDirectives as S, vShow as P, createVNode as R, Transition as z, withCtx as U, withModifiers as F } from "vue";
 const q = {
   props: {
     autoscroll: {
@@ -117,7 +117,7 @@ const q = {
       return e == null ? this.mutableLoading = !this.mutableLoading : this.mutableLoading = e;
     }
   }
-}, C = (e, t) => {
+}, V = (e, t) => {
   const s = e.__vccOpts || e;
   for (const [n, l] of t)
     s[n] = l;
@@ -132,7 +132,7 @@ const q = {
 function G(e, t) {
   return a(), r("svg", Y, $);
 }
-const W = /* @__PURE__ */ C(X, [["render", G]]), Z = {}, ee = {
+const W = /* @__PURE__ */ V(X, [["render", G]]), Z = {}, ee = {
   xmlns: "http://www.w3.org/2000/svg",
   width: "14",
   height: "10"
@@ -142,7 +142,7 @@ const W = /* @__PURE__ */ C(X, [["render", G]]), Z = {}, ee = {
 function ie(e, t) {
   return a(), r("svg", ee, se);
 }
-const oe = /* @__PURE__ */ C(Z, [["render", ie]]), T = {
+const oe = /* @__PURE__ */ V(Z, [["render", ie]]), T = {
   Deselect: W,
   OpenIndicator: oe
 }, ne = {
@@ -154,10 +154,10 @@ const oe = /* @__PURE__ */ C(Z, [["render", ie]]), T = {
         left: l,
         width: i
       } = t.$refs.toggle.getBoundingClientRect();
-      let _ = window.scrollX || window.pageXOffset, o = window.scrollY || window.pageYOffset;
+      let m = window.scrollX || window.pageXOffset, o = window.scrollY || window.pageYOffset;
       e.unbindPosition = t.calculatePosition(e, t, {
         width: i + "px",
-        left: _ + l + "px",
+        left: m + l + "px",
         top: o + n + s + "px"
       }), document.body.appendChild(e);
     }
@@ -475,8 +475,8 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
         },
         listHeader: e,
         listFooter: e,
-        header: O(f({}, e), { deselect: this.deselect }),
-        footer: O(f({}, e), { deselect: this.deselect })
+        header: _(f({}, e), { deselect: this.deselect }),
+        footer: _(f({}, e), { deselect: this.deselect })
       };
     },
     childComponents() {
@@ -672,17 +672,17 @@ https://vue-select.org/api/props.html#getoptionkey`, e, t);
   key: 0,
   class: "vs__new-option-label"
 }, Oe = {
-  key: 0,
+  key: 1,
   class: "vs__new-option-label"
 }, we = {
   key: 0,
   class: "vs__no-options"
 }, ve = ["id"];
 function Se(e, t, s, n, l, i) {
-  const _ = K("append-to-body");
+  const m = K("append-to-body");
   return a(), r("div", {
     dir: s.dir,
-    class: A(["v-select", i.stateClasses])
+    class: B(["v-select", i.stateClasses])
   }, [
     d(e.$slots, "header", h(c(i.scope.header))),
     u("div", {
@@ -696,7 +696,7 @@ function Se(e, t, s, n, l, i) {
       onMousedown: t[1] || (t[1] = (o) => i.toggleDropdown(o))
     }, [
       u("div", ue, [
-        (a(!0), r(b, null, k(i.selectedValue, (o, p) => d(e.$slots, "selected-option-container", {
+        (a(!0), r(A, null, k(i.selectedValue, (o, p) => d(e.$slots, "selected-option-container", {
           option: i.normalizeOptionForSlot(o),
           deselect: i.deselect,
           multiple: s.multiple,
@@ -707,7 +707,7 @@ function Se(e, t, s, n, l, i) {
             class: "vs__selected"
           }, [
             d(e.$slots, "selected-option", h(c(i.normalizeOptionForSlot(o))), () => [
-              w(m(s.getOptionLabel(o)), 1)
+              O(b(s.getOptionLabel(o)), 1)
             ]),
             s.multiple ? (a(), r("button", {
               key: 0,
@@ -720,7 +720,7 @@ function Se(e, t, s, n, l, i) {
               "aria-label": `Deselect ${s.getOptionLabel(o)}`,
               onClick: (y) => i.deselect(o)
             }, [
-              (a(), v(S(i.childComponents.Deselect)))
+              (a(), w(v(i.childComponents.Deselect)))
             ], 8, pe)) : g("", !0)
           ]))
         ])), 256)),
@@ -729,7 +729,7 @@ function Se(e, t, s, n, l, i) {
         ])
       ], 512),
       u("div", fe, [
-        V(u("button", {
+        S(u("button", {
           ref: "clearButton",
           disabled: s.disabled,
           type: "button",
@@ -738,15 +738,15 @@ function Se(e, t, s, n, l, i) {
           "aria-label": "Clear Selected",
           onClick: t[0] || (t[0] = (...o) => i.clearSelection && i.clearSelection(...o))
         }, [
-          (a(), v(S(i.childComponents.Deselect)))
+          (a(), w(v(i.childComponents.Deselect)))
         ], 8, ge), [
           [P, i.showClearButton]
         ]),
         d(e.$slots, "open-indicator", h(c(i.scope.openIndicator)), () => [
-          s.noDrop ? g("", !0) : (a(), v(S(i.childComponents.OpenIndicator), h(D({ key: 0 }, i.scope.openIndicator.attributes)), null, 16))
+          s.noDrop ? g("", !0) : (a(), w(v(i.childComponents.OpenIndicator), h(D({ key: 0 }, i.scope.openIndicator.attributes)), null, 16))
         ]),
         d(e.$slots, "spinner", h(c(i.scope.spinner)), () => [
-          V(u("div", ye, "Loading...", 512), [
+          S(u("div", ye, "Loading...", 512), [
             [P, e.mutableLoading]
           ])
         ])
@@ -754,7 +754,7 @@ function Se(e, t, s, n, l, i) {
     ], 40, ce),
     R(z, { name: s.transition }, {
       default: U(() => [
-        i.dropdownOpen ? V((a(), r("ul", {
+        i.dropdownOpen ? S((a(), r("ul", {
           id: `vs${s.uid}__listbox`,
           ref: "dropdownMenu",
           key: `vs${s.uid}__listbox`,
@@ -765,11 +765,11 @@ function Se(e, t, s, n, l, i) {
           onMouseup: t[3] || (t[3] = (...o) => i.onMouseUp && i.onMouseUp(...o))
         }, [
           d(e.$slots, "list-header", h(c(i.scope.listHeader))),
-          (a(!0), r(b, null, k(i.filteredOptions, (o, p) => (a(), r("li", {
+          (a(!0), r(A, null, k(i.filteredOptions, (o, p) => (a(), r("li", {
             id: `vs${s.uid}__option-${p}`,
             key: s.getOptionKey(o),
             role: "option",
-            class: A(["vs__dropdown-option", {
+            class: B(["vs__dropdown-option", {
               "vs__dropdown-option--deselect": i.isOptionDeselectable(o) && p === e.typeAheadPointer,
               "vs__dropdown-option--selected": i.isOptionSelected(o),
               "vs__dropdown-option--highlight": p === e.typeAheadPointer,
@@ -779,24 +779,20 @@ function Se(e, t, s, n, l, i) {
             onMouseover: (y) => s.selectable(o) ? e.typeAheadPointer = p : null,
             onClick: F((y) => s.selectable(o) ? i.select(o) : null, ["prevent", "stop"])
           }, [
-            s.newOptionLabelBefore ? (a(), r(b, { key: 0 }, [
-              s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", _e, m(s.newOptionLabel), 1)) : g("", !0)
-            ], 64)) : g("", !0),
             d(e.$slots, "option", h(c(i.normalizeOptionForSlot(o))), () => [
-              w(m(s.getOptionLabel(o)), 1)
-            ]),
-            s.newOptionLabelBefore ? g("", !0) : (a(), r(b, { key: 1 }, [
-              s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", Oe, m(s.newOptionLabel), 1)) : g("", !0)
-            ], 64))
+              s.newOptionLabelBefore && s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", _e, b(s.newOptionLabel), 1)) : g("", !0),
+              O(" " + b(s.getOptionLabel(o)) + " ", 1),
+              !s.newOptionLabelBefore && s.taggable && !i.optionExists(o) && s.newOptionLabel ? (a(), r("span", Oe, b(s.newOptionLabel), 1)) : g("", !0)
+            ])
           ], 42, me))), 128)),
           i.filteredOptions.length === 0 ? (a(), r("li", we, [
             d(e.$slots, "no-options", h(c(i.scope.noOptions)), () => [
-              w(" Sorry, no matching options. ")
+              O(" Sorry, no matching options. ")
             ])
           ])) : g("", !0),
           d(e.$slots, "list-footer", h(c(i.scope.listFooter)))
         ], 40, be)), [
-          [_]
+          [m]
         ]) : (a(), r("ul", {
           key: 1,
           id: `vs${s.uid}__listbox`,
@@ -809,7 +805,7 @@ function Se(e, t, s, n, l, i) {
     d(e.$slots, "footer", h(c(i.scope.footer)))
   ], 10, he);
 }
-const Le = /* @__PURE__ */ C(de, [["render", Se]]);
+const Le = /* @__PURE__ */ V(de, [["render", Se]]);
 export {
   Le as default
 };
