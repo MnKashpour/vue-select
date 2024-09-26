@@ -28,6 +28,7 @@
     "license": "MIT",
     "prepare": "npm run build",
     "scripts": {
+        "prepare": "npm run build",
         "dev:docs": "cd docs && yarn serve",
         "build:docs": "cd docs && yarn build",
         "semantic-release": "semantic-release",
